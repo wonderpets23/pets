@@ -1,0 +1,38 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace std;
+
+struct Node{
+	int data;
+	struct Node*next;
+};
+
+
+struct Node *head=NULL;
+void printlist() {
+	struct Node*point=head;
+	while(point!=NULL){
+		cout<<" "<<point->data<<" ";
+		point = point->next;
+	}
+}
+
+
+void insertATbegin(int data){
+	struct Node*lk=(struct Node*)malloc(sizeof(struct Node));
+	lk->data=data;
+	lk->next=head;
+	head=lk;
+}
+
+
+int main(){
+	insertATbegin(12);
+	insertATbegin(22);
+	insertATbegin(30);
+	insertATbegin(44);
+	insertATbegin(50);
+	printlist();
+	
+	return 0;
+}
